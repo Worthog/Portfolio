@@ -14,10 +14,13 @@ import {
 } from 'revalidate';
 import { createEvent, updateEvent, cancelToggle } from '../eventActions';
 import TextInput from '../../../app/common/form/TextInput';
-import TextArea from '../../../app/common/form/TextArea';
+// import TextArea from '../../../app/common/form/TextArea';
 import SelectInput from '../../../app/common/form/SelectInput';
 import DateInput from '../../../app/common/form/DateInput';
 import PlaceInput from '../../../app/common/form/PlaceInput';
+// import ReactMarkdown from 'react-markdown' ;
+import ReactMDE from 'redux-forms-markdown-editor';
+
 
 const mapState = (state, ownProps) => {
   let event = {};
@@ -40,12 +43,10 @@ const actions = {
 };
 
 const category = [
-  { key: 'drinks', text: 'Drinks', value: 'drinks' },
-  { key: 'culture', text: 'Culture', value: 'culture' },
-  { key: 'film', text: 'Film', value: 'film' },
-  { key: 'food', text: 'Food', value: 'food' },
-  { key: 'music', text: 'Music', value: 'music' },
-  { key: 'travel', text: 'Travel', value: 'travel' }
+  { key: 'Treatment Day', text: 'treatment', value: 'treatment' },
+  { key: 'Learn Reiki I', text: 'reiki1', value: 'reiki1' },
+  { key: 'Learn Reiki II', text: 'reiki2', value: 'reiki2' },
+  { key: 'Learn Reiki III', text: 'reiki3', value: 'reiki3' },
 ];
 
 const validate = combineValidators({
@@ -146,13 +147,16 @@ class EventForm extends Component {
                 options={category}
                 placeholder="What is your event about"
               />
+              <label>Description</label> 
               <Field
                 name="description"
                 type="text"
-                component={TextArea}
+                component={ReactMDE}
                 rows={3}
-                placeholder="Tell us about your event"
+                placeholder="Describe this event ..."
+               
               />
+              
               <Header sub color="teal" content="Event Location details" />
               <Field
                 name="city"
@@ -170,7 +174,7 @@ class EventForm extends Component {
                   options={{
                     location: new google.maps.LatLng(this.state.cityLatLng),
                     radius: 1000,
-                    types: ['establishment']
+                    types: ['address']
                   }}
                   placeholder="Event venue"
                   onSelect={this.handleVenueSelect}

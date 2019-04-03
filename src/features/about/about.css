@@ -1,0 +1,215 @@
+
+
+.aboutSignature{
+  font-size: 2.5rem;
+  font-weight: normal;
+  font-family: 'Dancing Script', cursive;  
+  color: slategrey; 
+
+}
+
+@supports (display: grid) {
+
+/* ---- Mobile Version ---- */
+
+@media (min-width: 320px) and (max-width: 767px)  {
+ 
+  .about-wrapper {
+  display: grid; 
+  grid-template-columns: 1rem 90% 1rem;
+  grid-template-rows:  
+  500px
+  auto
+  auto
+  auto  ;
+  grid-template-areas: 
+  "content-1  content-1   content-1"     
+  "sidebar-1  content-2   aside-1"
+  "sidebar-1  content-3   aside-2"     
+  "sidebar-1  footer      aside-4" ;
+  }
+
+  .about-img{    
+    grid-area: content-1;
+    border-radius: 5px;
+    background-image: url('/assets/mary.png');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .about-title{
+    grid-area: content-1;
+    font-size: 2rem;
+    font-weight: normal;
+    font-family: 'Dancing Script', cursive;  
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem; 
+    background-color: transparent;
+    z-index: 2;
+    margin-top: 1rem;  
+    text-align: center;
+    line-height: 2rem;
+  
+  }
+
+  .about-subtitle{
+      grid-area: content-2; 
+      font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+      font-size: 2rem;    
+      font-weight: normal;
+      margin-top: 1rem;
+      color: slategrey;
+      line-height: 2.5rem;
+    }
+ 
+  .about-text  {
+    grid-area: content-3; 
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    font-size: 1.5rem;
+    font-weight: normal;    
+    color: slategrey;
+    margin-top: 2rem;
+    line-height: 1.1rem;
+ }
+
+ .footer {
+  grid-area: footer;
+  margin-top: 5rem;
+}
+}
+
+
+/* ---- Tablet/ipad Version ------- */
+@media (min-width: 768px) and (max-width: 991px)
+{
+  .about-wrapper {
+    width:80%;
+    /* margin-left:auto;
+    margin-right:auto;  */
+    display: grid;
+    grid-gap: 1em;  
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows:  
+    600px
+    auto
+    auto
+    auto  ;
+    grid-template-areas: 
+    "sidebar-1  content-1   aside-1"     
+    "sidebar-1  content-2   aside-1"
+    "sidebar-1  content-3   aside-2"     
+    "sidebar-1  footer      aside-4" ;
+    }
+  
+    .about-img{    
+      grid-area: content-1;
+      border-radius: 5px;
+      background-image: url('/assets/mary.png');    
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  
+    .about-title{
+      grid-area: content-1;
+      font-size: 3rem;
+      font-weight: normal;
+      font-family: 'Dancing Script', cursive;  
+      color: white;
+      margin-left: 1rem;
+      margin-right: 1rem; 
+      background-color: transparent;
+      z-index: 2;
+      margin-top: 2rem;  
+      text-align: center;
+      line-height: 3rem;
+    
+    }
+  
+    .about-subtitle{
+        grid-area: content-2; 
+        font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+        font-size: 2rem;    
+        font-weight: normal;
+        margin-top: 1rem;
+        color: slategrey;
+        line-height: 2.5rem;
+      }
+   
+    .about-text  {
+      grid-area: content-3; 
+      font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+      font-size: 1.5rem;
+      font-weight: normal;    
+      color: slategrey;
+      margin-top: 2rem;
+      line-height: 1.1rem;
+   }
+  
+   .footer {
+    grid-area: footer;
+    margin-top: 5rem;
+  }
+  
+
+  
+}
+
+/* ---- Desktop Version ------- */
+
+@media (min-width: 992px) 
+{
+  .about-wrapper {
+    width: 100%; 
+    margin-left:auto;
+    margin-right:auto;   
+    display: grid;
+    grid-gap: 1em;  
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows:  
+    600px
+    auto
+    auto
+    auto  ;
+    grid-template-areas: 
+    "sidebar-1  content-1   aside-1"     
+    "sidebar-1  content-2   aside-1"
+    "sidebar-1  content-3   aside-2"     
+    "footer   footer   footer" ;
+    justify-content: center;
+    }
+  
+    .about-img{   
+      width: 400px;
+      min-height: 600px;   
+      grid-area: content-1;
+      border-radius: 5px;
+      background-image: url('/assets/mary.png');    
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left:auto;
+      margin-right:auto;   
+    }
+  
+   
+  
+   
+    .about-text  {
+      grid-area: content-2; 
+      font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+      font-size: 1.5rem;
+      font-weight: normal;    
+      color: slategrey;
+      margin-top: 2rem;
+      line-height: 1.1rem;
+   }
+  
+   .footer {
+    grid-area: footer;
+    margin-top: 5rem;
+  } 
+
+  }
+
+
+}

@@ -29,10 +29,13 @@ class EventDetailedChat extends Component {
     const { showReplyForm, selectedCommentId } = this.state;
     return (
       <div>
-        <Segment textAlign="center" attached="top" inverted color="teal" style={{ border: 'none' }}>
+        {/* <Segment textAlign="center" attached="top" inverted color="grey" style={{ border: 'none' }}>
           <Header>Chat about this event</Header>
-        </Segment>
-
+        </Segment> */}
+        <Header as='h3' block textAlign="center">
+         Chat about this event
+        </Header>
+      
         <Segment attached>
           <Comment.Group>
             {eventChat &&

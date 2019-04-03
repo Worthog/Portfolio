@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Grid, Loader } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { getEventsForDashboard } from '../eventActions';
 import EventList from '../EventList/EventList';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
-import EventActivity from '../EventActivity/EventActivity';
+import Footer from '../../home/Footer' ;
 
 const query = [
   {
@@ -17,8 +17,8 @@ const query = [
 
 const mapState = state => ({
   events: state.events,
-  loading: state.async.loading,
-  activities: state.firestore.ordered.activity
+  loading: state.async.loading
+ 
 });
 
 const actions = {
@@ -41,7 +41,13 @@ class EventDashboard extends Component {
         moreEvents: true,
         loadingInitial: false
       });
+    } else{
+      this.setState({
+        loadingInitial: false
+      })
+
     }
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -63,33 +69,39 @@ class EventDashboard extends Component {
     }
   };
 
-  handleContextRef = contextRef => this.setState({contextRef})
+  // handleContextRef = contextRef => this.setState({contextRef})
+  // const { loading, activities } = this.props;
+
 
   render() {
-    const { loading, activities } = this.props;
+    const { loading } = this.props;
     const { moreEvents, loadedEvents } = this.state;
     if (this.state.loadingInitial) return <LoadingComponent inverted={true} />;
 
+    // remove context ref for now 
+    // <div ref={this.handleContextRef}>
+    // </div>
     return (
+      <React.Fragment>
       <Grid>
-        <Grid.Column width={10}>
-          <div ref={this.handleContextRef}>
+        <Grid.Column  >
+                 
           <EventList
             loading={loading}
             moreEvents={moreEvents}
             events={loadedEvents}
             getNextEvents={this.getNextEvents}
           />
-          </div>
-
+         
         </Grid.Column>
-        <Grid.Column width={6}>
-          <EventActivity activities={activities} contextRef={this.state.contextRef} />
-        </Grid.Column>
-        <Grid.Column width={10}>
+       
+        {/* <Grid.Column>
           <Loader active={loading}/>
-        </Grid.Column>
+        </Grid.Column> */}
+           
       </Grid>
+      <Footer/>
+      </React.Fragment>
     );
   }
 }

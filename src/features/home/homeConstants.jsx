@@ -1,0 +1,3 @@
+export const TEST_DEVICE = "TEST_DEVICE";
+export const UPDATE_DEVICE = "UPDATE_DEVICE";
+export const UPDATE_MOBILE = "UPDATE_MOBILE";

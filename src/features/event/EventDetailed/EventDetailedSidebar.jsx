@@ -1,11 +1,11 @@
 import React from 'react';
-import { Segment, List, Label, Item } from 'semantic-ui-react';
+import { Segment, List, Label, Item, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 
 const EventDetailedSidebar = ({ attendees }) => {
   return (
     <div>
-      <Segment
+      {/* <Segment
         textAlign="center"
         style={{ border: 'none' }}
         attached="top"
@@ -14,7 +14,12 @@ const EventDetailedSidebar = ({ attendees }) => {
         color="teal"
       >
         {attendees && attendees.length} {attendees && attendees.length === 1 ? 'Person' : 'People'} Going
-      </Segment>
+      </Segment>  */}
+
+      <Header as='h3' block textAlign="center">
+      {attendees && attendees.length} {attendees && attendees.length === 1 ? 'Person' : 'People'} attending 
+      </Header>
+
       <Segment attached>
         <List relaxed divided>
           {attendees &&
@@ -33,7 +38,7 @@ const EventDetailedSidebar = ({ attendees }) => {
                   <Item.Header as="h3">
                     <Link to={`/profile/${attendee.id}`}>{attendee.displayName}</Link>
                   </Item.Header>
-                </Item.Content>
+                </Item.Content> 
               </Item>
             ))}
         </List>

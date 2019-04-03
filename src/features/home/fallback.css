@@ -1,0 +1,264 @@
+/* --- Fallback Version --- */
+
+
+.block1-title, .block2-title, .block3-title, .block4-title{    
+  font-size: 4rem;
+  font-weight: normal;
+  font-family: 'Dancing Script', cursive;  
+  color: slategrey;
+  margin-left: 1rem;
+  margin-right: 1rem; 
+  background-color: transparent;
+  z-index: 2;
+  margin-top: 2rem;  
+  margin-bottom: 2rem;  
+  text-align: center;
+  line-height: 4rem;
+  
+  }
+
+  .block1-subtitle, .block2-subtitle, .block3-subtitle, .block4-subtitle{
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    font-size: 1.5rem;    
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-bottom: 2rem;  
+    color: slategrey;
+    line-height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    
+      
+    }
+ 
+  .block1-text,.block2-text, .block3-text, .block4-text  {
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    font-size: 1.5rem;
+    font-weight: normal;    
+    color: slategrey;
+    margin-top: 2rem;
+    margin-bottom: 2rem; 
+    line-height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    
+ }
+
+ .block1-footer,.block2-footer,.block3-footer,.block4-footer {
+ 
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;  
+  
+} 
+
+
+.btn1 {
+  background-color: slategrey; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.btn1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+
+ /* ---- Mobile Version ---- */
+
+@media (min-width: 320px) and (max-width: 767px)  {
+ 
+  .block1-wrapper, .block2-wrapper, .block3-wrapper, .block4-wrapper {
+    width: 90%;     
+    margin-left: auto;
+    margin-right: auto;   
+    justify-content: center;   
+  }
+
+  .block1-img{  
+    width: 100%;
+    min-height: 250px;  
+    padding: 2px;      
+    background-image: url('/assets/blueflower.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+ 
+  .block2-img{  
+    width: 100%;
+    min-height: 250px;  
+    padding: 2px;      
+    background-image: url('/assets/wellness.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .block3-img{  
+    width: 100%;
+    min-height: 250px;  
+    padding: 2px;      
+    background-image: url('/assets/lotus.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .block4-img{  
+    width: 100%;
+    min-height: 250px;  
+    padding: 2px;      
+    background-image: url('/assets/lake.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  
+
+}
+
+
+/* ---- Tablet/ipad Version ------- */
+@media (min-width: 768px) and (max-width: 991px)
+{
+  
+  .block1-wrapper, .block2-wrapper, .block3-wrapper, .block4-wrapper {
+    width: 80%;     
+    margin-left: auto;
+    margin-right: auto;      
+  }
+
+    .block1-img{         
+      width: 100%;
+      min-height: 400px;  
+      padding: 2px;      
+      background-image: url('/assets/blueflower.jpg');    
+      background-size: contain;
+      background-repeat: no-repeat;
+      
+    }
+    .block2-img{  
+      width: 100%;
+      min-height: 400px;  
+      padding: 2px;      
+      background-image: url('/assets/wellness.jpg');    
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  
+    .block3-img{  
+      width: 100%;
+      min-height: 400px;  
+      padding: 2px;      
+      background-image: url('/assets/lotus.jpg');    
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  
+    .block4-img{  
+      width: 100%;
+      min-height: 400px;  
+      padding: 2px;      
+      background-image: url('/assets/lake.jpg');    
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .block2-title{    
+      font-size: 4rem;
+      font-weight: normal;
+      font-family: 'Dancing Script', cursive;  
+      color: slategrey;
+      margin-left: 1rem;
+      margin-right: 1rem; 
+      background-color: transparent;
+      z-index: 2;
+      margin-top: 2rem;  
+      margin-bottom: 2rem;  
+      text-align: center;
+      line-height: 4rem;
+      
+      }
+
+    .block2-subtitle{
+        font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+        font-size: 1.5rem;    
+        font-weight: normal;
+        margin-top: 2rem;
+        margin-bottom: 2rem;  
+        color: slategrey;
+        line-height: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+              
+        }
+}
+
+/* ---- Desktop Version (fallback.css)------- */
+
+@media (min-width: 992px) 
+{
+  
+  .block1-wrapper, .block2-wrapper, .block3-wrapper, block4-wrapper {
+    width: 90%;     
+    margin-left: auto;
+    margin-right: auto;   
+    justify-content: center;   
+  } 
+
+    .block1-img{  
+      width: 70%;
+      min-height: 800px;             
+      background-image: url('/assets/blueflower.jpg');    
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-left:auto;
+      margin-right: auto;     
+    }
+    .block2-img{  
+      width: 70%;
+      min-height: 800px;             
+      background-image: url('/assets/wellness.jpg');    
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-left:auto;
+      margin-right: auto;         
+    }  
+    .block3-img{  
+      width: 70%;
+      min-height: 800px;             
+      background-image: url('/assets/lotus.jpg');    
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-left:auto;
+      margin-right: auto;         
+    }  
+    .block4-img{  
+      width: 70%;
+      min-height: 800px;             
+      background-image: url('/assets/lake.jpg');    
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-left:auto;
+      margin-right: auto;                 
+    }
+  
+  }
+
+
+
+  
+

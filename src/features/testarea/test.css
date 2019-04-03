@@ -1,0 +1,213 @@
+
+ /* ---- Mobile Version ---- */
+
+@media (min-width: 320px) and (max-width: 767px)  {
+ 
+  .testgrid {
+  display: grid;
+  grid-gap: 1em;  
+  grid-template-columns: 5px 1fr 5px;
+  grid-template-rows:  
+  250px
+  auto
+  auto
+  auto  ;
+  grid-template-areas: 
+  "content-1  content-1   content-1"     
+  "sidebar-1  content-2   aside-1"
+  "sidebar-1  content-3   aside-2"     
+  "sidebar-1  footer      aside-4" ;
+  }
+
+  .testheader{    
+    grid-area: content-1;
+    border-radius: 5px;
+    background-image: url('/assets/rest.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .testheadertitle{
+    grid-area: content-1;
+    font-size: 2rem;
+    font-weight: normal;
+    font-family: 'Dancing Script', cursive;  
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem; 
+    background-color: transparent;
+    z-index: 2;
+    margin-top: 1rem;  
+    text-align: center;
+    line-height: 3rem;
+  
+  }
+
+  .testheadercontent{
+      grid-area: content-2; 
+      font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+      font-size: 2rem;    
+      font-weight: normal;
+      margin-top: 1rem;
+      color: slategrey;
+      line-height: 2.5rem;
+    }
+ 
+  .mainpagetext1  {
+    grid-area: content-3; 
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    font-size: 1.5rem;
+    font-weight: normal;    
+    color: slategrey;
+    margin-top: 2rem;
+    line-height: 1.1rem;
+ }
+}
+
+
+/* ---- Tablet/ipad Version ------- */
+@media (min-width: 768px) and (max-width: 991px)
+{
+
+  .testgrid {  
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows:  
+  475px
+  auto
+  auto
+  auto  ;
+  grid-template-areas: 
+  "content-1  content-1   content-1"     
+  "sidebar-1  content-2   aside-1"
+  "sidebar-1  content-3   aside-2"     
+  "sidebar-1  footer      aside-4" ;
+  }
+
+  .testheader{    
+    grid-area: content-1;
+    border-radius: 5px;
+    background-image: url('/assets/rest.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .testheadertitle{
+    grid-area: content-1;
+    font-size: 3rem;
+    font-weight: normal;
+    font-family: 'Dancing Script', cursive;  
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem; 
+    background-color: transparent;
+    z-index: 2;
+    margin-top: 2rem;  
+    text-align: center;
+    line-height: 3rem;
+  
+  }
+
+  .testheadercontent{
+      grid-area: content-2; 
+      font-size: 2rem;    
+      margin-top: 1rem;
+      margin-left: 2rem;
+      margin-right: 2rem; 
+      color: slategrey;
+      line-height: 2rem;
+    }
+ 
+  .mainpagetext1  {
+    grid-area: content-3; 
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    color: slategrey;
+    margin-top: 2rem;
+    padding: 1rem;
+    
+ }
+}
+
+/* ---- Desktop Version ------- */
+
+@media (min-width: 992px) 
+{
+  .testgrid {
+    border-radius: 5px;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows:  
+    800px 1fr 1fr 1fr  ;
+    grid-template-areas: 
+    "content-1  content-1   content-1"     
+    "sidebar-1  content-2   aside-1"
+    "sidebar-1  content-3   aside-2"     
+    "sidebar-1  footer      aside-4" ;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   
+    
+  }  
+  
+  .testheader{   
+    grid-area: content-1;
+    border-radius: 5px;
+    background-image: url('/assets/rest.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+
+
+  }
+  .testheadertitle{
+    grid-area: content-1;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;  
+    color: white;   
+    background-color: transparent;
+    z-index: 2;
+    margin-top: 3rem;  
+    text-align: center;
+    line-height: 2rem;
+  
+  }
+
+  .testheadercontent{
+    grid-area: content-1;
+    font-size: 2rem;
+    font-weight: normal;    
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif; 
+    color: white;    
+    background-color: transparent;
+    z-index: 2;    
+    margin-top: 12rem;  
+    text-align: center;
+    line-height: 2rem;
+    margin-left:3rem;
+    margin-right:3rem;
+    }
+
+    .mainpagetext1  {
+      grid-area: content-2; 
+      font-size: 1.5rem;
+      font-weight: normal;
+      font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+      color: slategrey;
+      margin-top: 2rem;
+      
+   }
+
+    .footer {
+      grid-area: footer;
+      margin-top: 5rem;
+    }
+
+  }
+
+
+
+  
+

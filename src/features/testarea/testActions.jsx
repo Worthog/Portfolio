@@ -1,5 +1,24 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER, COUNTER_ACTION_FINISHED, COUNTER_ACTION_STARTED } from './testConstants';
-import firebase from '../../app/config/firebase'
+import {INCREMENT_COUNTER, DECREMENT_COUNTER, COUNTER_ACTION_STARTED, COUNTER_ACTION_FINISHED, TEST_DEVICE, UPDATE_DEVICE } from './testConstants';
+
+import { 
+  isBrowser,
+  isMobile,
+  isTablet 
+} from "react-device-detect";
+
+export const setDevice = (payload) => {
+  return {
+    type: UPDATE_DEVICE,
+    payload
+  }
+}
+
+
+export const testDeviceAction = () => {
+  return {
+    type: TEST_DEVICE
+  }
+}
 
 export const incrementCounter = () => {
   return {
@@ -19,7 +38,7 @@ export const startCounterAction = () => {
   }
 }
 
-export const finsihCounterAction = () => {
+export const finishCounterAction = () => {
   return {
     type: COUNTER_ACTION_FINISHED
   }
@@ -34,7 +53,7 @@ export const incrementAsync = () => {
     dispatch(startCounterAction());
     await delay(1000);
     dispatch({type: INCREMENT_COUNTER});
-    dispatch(finsihCounterAction());
+    dispatch(finishCounterAction());
   }
 }
 
@@ -43,19 +62,29 @@ export const decrementAsync = () => {
     dispatch(startCounterAction());
     await delay(1000);
     dispatch({type: DECREMENT_COUNTER});
-    dispatch(finsihCounterAction());
+    dispatch(finishCounterAction());
   }
 }
 
-export const testPermissions = () => 
-  async (dispatch, getState) => {
-    const firestore = firebase.firestore();
-    try {
-      let userDocRef = await firestore.collection('users').doc('DRvH9hSFnjYHIj2z9NIGpYXKRmV2')
-      userDocRef.update({
-        displayName: 'testing'
-      })
-    } catch (err) {
-      console.log(err)
-    }
+export const testDevice = () => {
+  return async dispatch => {
+    // dispatch(startCounterAction());
+    // await delay(1000);
+    // dispatch({type: INCREMENT_COUNTER});
+    // dispatch(finishCounterAction());
+    if (isMobile) {
+      console.log("This is a mobile device"); 
+      //setDevice('mobile');
+      dispatch(setDevice('mobile')); 
+    }; 
+    if (isBrowser) {
+      console.log("This is a Browser"); 
+      dispatch(setDevice('desktop')); 
+    }; 
+    if (isTablet) {
+      console.log("This is a Tablet"); 
+      dispatch(setDevice('tablet')); 
+    }; 
+
   }
+}

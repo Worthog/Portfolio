@@ -3,18 +3,18 @@ import { Segment, Image, Item, Header, Button, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import format from 'date-fns/format';
 
-const eventImageStyle = {
-  filter: 'brightness(30%)'
-};
+// const eventImageStyle = {
+//   // filter: 'brightness(70%)'
+// };
 
-const eventImageTextStyle = {
-  position: 'absolute',
-  bottom: '5%',
-  left: '5%',
-  width: '100%',
-  height: 'auto',
-  color: 'white'
-};
+// const eventImageTextStyle = {
+//   position: 'absolute',
+//   bottom: '5%',
+//   left: '5%',
+//   width: '100%',
+//   height: 'auto',
+//   color: 'white'
+// };
 
 const EventDetailedHeader = ({ openModal, authenticated, loading, event, isHost, isGoing, goingToEvent, cancelGoingToEvent }) => {
   let eventDate;
@@ -25,12 +25,12 @@ const EventDetailedHeader = ({ openModal, authenticated, loading, event, isHost,
     <Segment.Group>
       <Segment basic attached="top" style={{ padding: '0' }}>
         <Image
-          src={`/assets/categoryImages/${event.category}.jpg`}
+          src={`/assets/${event.category}.jpg`}
           fluid
-          style={eventImageStyle}
+          
         />
-
-        <Segment basic style={eventImageTextStyle}>
+ 
+        <Segment basic >
           <Item.Group>
             <Item>
               <Item.Content>
@@ -56,10 +56,10 @@ const EventDetailedHeader = ({ openModal, authenticated, loading, event, isHost,
               <Button onClick={() => cancelGoingToEvent(event)}>Cancel My Place</Button>}
 
               {!isGoing && authenticated && !event.cancelled &&
-              <Button loading={loading} onClick={() => goingToEvent(event)} color="teal">JOIN THIS EVENT</Button>}
+              <Button loading={loading} onClick={() => goingToEvent(event)} color="blue">JOIN THIS EVENT</Button>}
               
               {!authenticated && !event.cancelled &&
-              <Button loading={loading} onClick={() => openModal('UnauthModal')} color="teal">JOIN THIS EVENT</Button>}
+              <Button loading={loading} onClick={() => openModal('UnauthModal')} color="blue">JOIN THIS EVENT</Button>}
               
               {event.cancelled && !isHost &&
               <Label size='large' color='red' content='This event has been cancelled'/>}

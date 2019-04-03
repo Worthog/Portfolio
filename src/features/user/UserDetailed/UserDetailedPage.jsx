@@ -5,13 +5,11 @@ import { firestoreConnect, isEmpty } from 'react-redux-firebase';
 import { compose } from 'redux'
 import { toastr } from 'react-redux-toastr'
 import UserDetailedHeader from './UserDetailedHeader'
-import UserDetailedDescription from './UserDetailedDescription'
 import UserDetailedPhotos from './UserDetailedPhotos'
-import UserDetailedSidebar from './UserDetailedSidebar'
 import UserDetailedEvents from './UserDetailedEvents'
 import { userDetailedQuery } from '../userQueries'
 import LoadingComponent from '../../../app/layout/LoadingComponent'
-import { getUserEvents, followUser, unfollowUser } from '../userActions'
+import { getUserEvents } from '../userActions'
 
 const mapState = (state, ownProps) => {
   let userUid = null;
@@ -36,9 +34,7 @@ const mapState = (state, ownProps) => {
 }
 
 const actions = {
-  getUserEvents,
-  followUser,
-  unfollowUser
+  getUserEvents
 }
 
 class UserDetailedPage extends Component {
@@ -58,17 +54,15 @@ class UserDetailedPage extends Component {
   }
 
   render() {
-    const {profile, photos, auth, match, requesting, events, eventsLoading, followUser, following, unfollowUser} = this.props;
+    const {profile, photos, auth, match, requesting, events, eventsLoading} = this.props;
     const isCurrentUser = auth.uid === match.params.id;
     const loading = requesting[`users/${match.params.id}`]
-    const isFollowing = !isEmpty(following)
+   
 
     if (loading) return <LoadingComponent inverted={true}/>
     return (
-      <Grid>
-        <UserDetailedHeader profile={profile}/>
-        <UserDetailedDescription profile={profile}/>
-        <UserDetailedSidebar unfollowUser={unfollowUser} isFollowing={isFollowing} profile={profile} followUser={followUser} isCurrentUser={isCurrentUser}/>
+      <Grid stackable>
+        <UserDetailedHeader profile={profile} isCurrentUser={isCurrentUser}/>       
         {photos && photos.length > 0 &&
         <UserDetailedPhotos photos={photos}/>}
         <UserDetailedEvents changeTab={this.changeTab} events={events} eventsLoading={eventsLoading}/>

@@ -1,84 +1,95 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-// import Script from 'react-load-script';
-// import GoogleMapReact from 'google-map-react';
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  getLatLng
-} from 'react-places-autocomplete';
-import { incrementAsync, decrementAsync, testPermissions } from './testActions';
+
+import { testDevice } from './testActions';
 import { openModal } from '../modals/modalActions'
 
+
+import {
+  
+  isBrowser,
+  isMobile,
+  deviceDetect,
+  osVersion, osName, browserName, browserVersion,
+  mobileVendor, mobileModel, mobileDevice
+  
+} from "react-device-detect";
+
+
 const mapState = state => ({
+  device: state.home.device,
+  mobile: state.home.mobile,
   data: state.test.data,
   loading: state.test.loading
 });
 
 const actions = {
-  incrementAsync,
-  decrementAsync,
+ 
   openModal,
-  testPermissions
+  testDevice
 };
 
-// const Marker = () => <Icon name='marker' size='big' color='red'/>
+
 
 class TestComponent extends Component {
 
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 11
-  };
-
-  state = {
-    address: '',
-    scriptLoaded: false
-  };
+  
 
   handleScriptLoad = () => {
     this.setState({ scriptLoaded: true });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-
-    geocodeByAddress(this.state.address)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
+  handleTestDevice = () => {
+    
+    console.log("You clicked testDevice"); 
+    this.setState({ scriptLoaded: true });
+    if (isMobile) {
+      console.log("This is a mobile device"); 
+    }; 
+    if (isBrowser) {
+      console.log("This is a Browser"); 
+    }; 
+    console.log("OS Version: ", osVersion);
+    console.log("OS Name: ", osName);
+    console.log("Browser Name: ", browserName);
+    console.log("Browser Version: ", browserVersion);
+    console.log("Device Detect: ", deviceDetect); 
+    const os = parseInt(osVersion,10); 
+    if (os < 10) { 
+      console.log("os version to old")
+    }; 
   };
 
-  onChange = address => this.setState({ address });
-
   render() {
-    const inputProps = {
-      value: this.state.address,
-      onChange: this.onChange
-    };
+  
+ 
 
-    const { incrementAsync, decrementAsync, data, openModal, loading, testPermissions } = this.props;
     return (
-      <div>
-        <h1>Test Area</h1>
-        <h3>The answer is: {data}</h3>
-        <Button loading={loading} onClick={incrementAsync} color="green" content="Increment" />
-        <Button loading={loading} onClick={decrementAsync} color="red" content="Decrement" />
-        <Button onClick={() => openModal('TestModal', {data: 42})} color="teal" content="Open Modal" />
-        <Button onClick={testPermissions} color="teal" content="Test Permissions" />
-        <br />
-        <br />
-        <form onSubmit={this.handleFormSubmit}>
-          {this.state.scriptLoaded && (
-            <PlacesAutocomplete inputProps={inputProps} />
-          )}
-          <button type="submit">Submit</button>
-        </form>
+      <React.Fragment>
 
-      </div>
+        
+        <Button onClick={this.handleTestDevice} >Test the Device</Button>
+        
+        <div >
+         
+          <div >
+            <ul>
+              <li>OS Version: {osVersion} </li>
+              <li>OS Name: {osName} </li>
+              <li>Browser Name: {browserName} </li>
+              <li>Browser Version: {browserVersion} </li>
+              <li>mobileVendor: {mobileVendor} </li>
+              <li>Mobile Device: {mobileDevice} </li> 
+              <li>Mobile Model: {mobileModel}</li>
+            </ul>
+                                 
+          </div>   
+
+         
+        </div>
+   
+      </React.Fragment>
     );
   }
 }

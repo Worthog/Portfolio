@@ -1,10 +1,16 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER, COUNTER_ACTION_FINISHED, COUNTER_ACTION_STARTED } from './testConstants';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, 
+  COUNTER_ACTION_FINISHED, COUNTER_ACTION_STARTED, UPDATE_DEVICE } from './testConstants';
 import { createReducer } from '../../app/common/util/reducerUtil'
 
 const initialState = {
   data: 43,
-  loading: false
+  loading: false,
+  device: null
 };
+
+export const updateDevice = (state, payload) => {
+  return { ...state, device:payload };
+}
 
 export const incrementCounter = (state, payload) => {
   return { ...state, data: state.data + 1 };
@@ -37,5 +43,6 @@ export default createReducer(initialState, {
   [INCREMENT_COUNTER]: incrementCounter,
   [DECREMENT_COUNTER]: decrementCounter,
   [COUNTER_ACTION_STARTED]: counterActionStarted,
-  [COUNTER_ACTION_FINISHED]: counterActionFinished
+  [COUNTER_ACTION_FINISHED]: counterActionFinished,
+  [UPDATE_DEVICE]: updateDevice,
 });

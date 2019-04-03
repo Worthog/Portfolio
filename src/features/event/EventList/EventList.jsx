@@ -5,9 +5,11 @@ import InfiniteScroll from 'react-infinite-scroller';
 class EventList extends Component {
   render() {
     const { events, getNextEvents, loading, moreEvents } = this.props;
+   
     return (
-      <div>
-        {events &&
+      <React.Fragment>
+        
+       {events &&
           events.length !== 0 && (
             <InfiniteScroll
               pageStart={0}
@@ -17,8 +19,9 @@ class EventList extends Component {
             >
               {events && events.map(event => <EventListItem key={event.id} event={event}/>)}
             </InfiniteScroll>
-          )}
-      </div>
+          )} 
+
+      </React.Fragment>          
     );
   }
 }

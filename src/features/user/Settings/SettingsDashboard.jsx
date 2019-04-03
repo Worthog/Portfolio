@@ -22,10 +22,10 @@ const mapState = (state) => ({
 
 const SettingsDashboard = ({ updatePassword, providerId, user, updateProfile }) => {
   return (
-    <Grid>
+    <Grid stackable >
       <Grid.Column width={12}>
         <Switch>
-          <Redirect exact from="/settings" to="/settings/basic" />
+          <Redirect exact from="/settings" to="/settings/about" />
           <Route path="/settings/basic" render={() => <BasicPage updateProfile={updateProfile} initialValues={user}/>} />
           <Route path="/settings/about" render={() => <AboutPage updateProfile={updateProfile} initialValues={user}/>} />
           <Route path="/settings/photos" component={PhotosPage} />

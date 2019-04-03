@@ -1,0 +1,73 @@
+import React from 'react';
+import { Segment, Image, Grid } from 'semantic-ui-react';
+import Footer from '../home/Footer' ;
+
+// const eventImageTextStyle = {
+//   position: 'absolute',
+//   bottom: '5%',
+//   left: '5%',
+//   width: '100%',
+//   height: 'auto',
+//   color: 'white'
+// };
+
+const AboutPage = () => {
+  
+  return (
+
+    <React.Fragment>
+
+    <Segment basic >
+      <Grid>
+      <Grid.Row>
+        <Grid.Column width={8}>
+          <Image
+            src={`/assets/mary2.jpg`}
+            size='large'
+            rounded
+          />         
+        </Grid.Column>
+    
+      
+      </Grid.Row>
+      </Grid>
+    </Segment>
+
+    <br/><br/>
+    <p className="mainpage text"> 
+      I am a Registered Nurse working with patients in palliative care. 
+      I am also a Reiki Master/Teacher and Therapeutic Touch Practitioner.
+    </p>
+    <p className="mainpage text">
+    I always felt I was on a spiritual path.  I sought and achieved my Reiki mastery in 2014 with 
+    Dean Noblett & Rebecca Couch from "Heartlight.ca".  They were and still are my guiding light through my 
+    self-discovery. 
+    </p>
+
+    <p className="mainpage text">I volunteer at Margaret Bahen Hospice, and Doane House Hospice providing Reiki and Visualization sessions 
+      to both patients and staff.       
+    </p>
+
+    <p className="mainpage text">I also do evening workshops at Doane House on an occasional basis, working with 
+    the Bereavment Group, teaching relaxation and imagery techniques. 
+    </p>
+
+
+    <p className="mainpage text">
+      I look forward to teaching and guiding you through your Reiki experience. 
+    </p>
+
+    <p></p>
+
+    <p className="dancing header" >
+            Mary 
+    </p>
+
+    <Footer/>
+    </React.Fragment>
+
+   
+  );
+};
+
+export default AboutPage;

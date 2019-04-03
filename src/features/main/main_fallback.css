@@ -1,0 +1,132 @@
+/* --- Fallback Version ---  */
+
+
+.maintitle{    
+  font-size: 3rem;
+  font-weight: normal;
+  font-family: 'Dancing Script', cursive;  
+  color: slategrey;
+  margin-left: 1rem;
+  margin-right: 1rem; 
+  background-color: transparent;
+  z-index: 2;
+  margin-top: 2rem;  
+  margin-bottom: 2rem;  
+  text-align: center;
+  line-height: 3rem;
+  
+  }
+
+  .mainsubtitle{
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    font-size: 1.5rem;    
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-bottom: 2rem;  
+    color: slategrey;
+    line-height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+
+      
+    }
+ 
+  .mainpagetext1{
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    font-size: 1.5rem;
+    font-weight: normal;    
+    color: slategrey;
+    margin-top: 2rem;
+    margin-bottom: 2rem; 
+    line-height: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+ }
+
+ .footer {
+ 
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;  
+  
+} 
+
+ /* ---- Mobile Version ---- */
+
+@media (min-width: 320px) and (max-width: 767px)  {
+ 
+  .wrapper {
+    width: 90%;     
+    margin-left: auto;
+    margin-right: auto;   
+    justify-content: center;   
+  }
+
+  .mainhero{  
+    width: 100%;
+    min-height: 250px;  
+    padding: 2px;      
+    background-image: url('/assets/rest.jpg');    
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+ 
+  
+
+}
+
+
+/* ---- Tablet/ipad Version ------- */
+@media (min-width: 768px) and (max-width: 991px)
+{
+    .wrapper {
+      width: 90%;     
+      margin-left: auto;
+      margin-right: auto;   
+      justify-content: center;   
+    }
+
+    .mainhero{         
+      width: 100%;
+      min-height: 400px;  
+      padding: 2px;      
+      background-image: url('/assets/rest.jpg');    
+      background-size: contain;
+      background-repeat: no-repeat;
+      
+    }    
+   
+}
+
+/* ---- Desktop Version ------- */
+
+@media (min-width: 992px) 
+{
+    .wrapper {
+      width: 90%;     
+      margin-left: auto;
+      margin-right: auto;   
+      justify-content: center;   
+    }
+
+    .mainhero{  
+      width: 80%;
+      min-height: 800px;             
+      background-image: url('/assets/rest.jpg');    
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-left:auto;
+      margin-right: auto;     
+    }
+    
+  
+  }
+
+
+
+  
+
